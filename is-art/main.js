@@ -22,9 +22,9 @@ async function getStatus() {
 	// console.log(artStatus)
 
 	if(artStatus) {
-	$('#status').text('art');
+		$('#status').text('art');
 	} else {
-	$('#status').text('not art');
+		$('#status').text('not art');
 	}
 
 	return artStatus;
