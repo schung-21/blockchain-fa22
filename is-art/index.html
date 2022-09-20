@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="application/javascript"></script>
+
+	<script src="abi.js" defer></script>
+	<script src="main.js" defer></script>
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%2360a5fa' fill='none' stroke-linecap='round' stroke-width='2' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M6 12l6 -9l6 9l-6 9z' /%3e%3cpath d='M6 12l6 -3l6 3l-6 2z' /%3e%3c/svg%3e">
+	<title>Is this Contract Art?</title>
+</head>
+
+<body>
+	<h1>Is this contract art?</h1>
+	<div>
+		<p>This contract (<span id="contractAddress"></span>)<br>is <span id="status"></span></p>
+	</div>
+	<button id="changeStatus">Change Status</button>
+</body>
+
+</html>
