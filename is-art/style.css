@@ -12,9 +12,10 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     padding: 3rem;
     background: cornflowerblue;
+    overflow: hidden;
 }
 
 h1 {
