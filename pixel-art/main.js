@@ -16,6 +16,7 @@ $('#submit').click(function() {
 
 async function getCanvas() {
     const canvasData = await contract.getCanvas();
+    console.log(canvasData);
 
     for (let i = 0; i < canvasData.length; i++) {
         for (let j = 0; j < canvasData.length; j++) {
@@ -25,7 +26,7 @@ async function getCanvas() {
                 name='canvas' 
                 id='x${i}y${j}' 
                 class='pixel' 
-                style='background:"${canvasData[i][j]}";'
+                style='background:${canvasData[i][j]};'
             >`);
         }
     }
