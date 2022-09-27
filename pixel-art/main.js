@@ -2,13 +2,11 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 const signer = provider.getSigner();
 const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
-
-
 getCanvas();
 
 let pixelRow;
 let pixelCol;
-
+let color = $("#colorpicker").val();
 
 $('#submit').click(function() {
     paintPixel();
@@ -41,12 +39,9 @@ async function getCanvas() {
     });
 }
 
-let color = $("#colorpicker").val();
-
 $('#colorpicker').change(function() {
     color = $(this).val();
 });
-
 
 async function paintPixel() {
     await provider.send("eth_requestAccounts", []);
