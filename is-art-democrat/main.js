@@ -1,8 +1,9 @@
+// Provider = MetaMask
 const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-// the person signed into metamask is the 'signer'
+// Signer = me (whoever signed into metamask)
 const signer = provider.getSigner();
 console.log(signer);
+// Contract = call functions from smart contract
 const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
 viewStatus();
