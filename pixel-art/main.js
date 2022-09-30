@@ -31,11 +31,9 @@ async function getCanvas() {
 
     $('.pixel').click(function() {
         let pixelId=$(this).attr('id');
-        let row = parseInt(pixelId[1]);
-        let col = parseInt(pixelId[3]);
-        
-        pixelRow = row;
-        pixelCol = col;
+
+        pixelRow = parseInt(pixelId[1]);
+        pixelCol = parseInt(pixelId[3]);
     });
 }
 

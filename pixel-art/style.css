@@ -33,7 +33,7 @@ body {
 
 #canvas {
     display: grid;
-    grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+    grid-template: repeat(32, 1fr) / repeat(32, 1fr);
     margin: 2rem auto 1rem;
     border: 1px solid;
 }
@@ -41,7 +41,7 @@ body {
 .pixel {
     color: inherit;
     border: 0;
-    width: 2rem; height: 2rem;
+    width: 1rem; height: 1rem;
     appearance: none;
 }
 
