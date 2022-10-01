@@ -23,6 +23,8 @@ async function getCanvas() {
                 type='radio' 
                 name='canvas' 
                 id='x${i}y${j}' 
+                data-x='${i}'
+                data-y='${j}'
                 class='pixel' 
                 style='background:${canvasData[i][j]};'
             >`);
@@ -30,10 +32,8 @@ async function getCanvas() {
     }
 
     $('.pixel').click(function() {
-        let pixelId=$(this).attr('id');
-
-        pixelRow = parseInt(pixelId[1]);
-        pixelCol = parseInt(pixelId[3]);
+        pixelRow = parseInt($(this).attr('data-x'));
+        pixelCol = parseInt($(this).attr('data-y'));
     });
 }
 
