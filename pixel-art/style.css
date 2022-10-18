@@ -22,12 +22,19 @@ body {
     background: #222;
 }
 
-button {
+button, #etherscan {
     padding: .25rem .5rem;
     border: 2px solid;
     color: inherit;
     background: none;
     border-radius: 2rem;
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+#etherscan {
+    position: absolute;
+    top: 2rem; left: 3rem;
 }
 
 #theme {
