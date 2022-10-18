@@ -1,33 +1,34 @@
-var contractAddress = "0xd5b96625F59aA21DeDbec3c69753606BcF8ab8e6";
+var contractAddress = "0x0a44F15417a5a438a1bdE9674aeA8e8722801eCc";
 
 var contractABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
-				"name": "row",
+				"name": "",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "col",
+				"name": "",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_color",
-				"type": "string"
 			}
 		],
-		"name": "paintPixel",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "addressToPainted",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
 	},
 	{
 		"inputs": [
@@ -58,9 +59,9 @@ var contractABI = [
 		"name": "getCanvas",
 		"outputs": [
 			{
-				"internalType": "string[][]",
+				"internalType": "string[32][32]",
 				"name": "",
-				"type": "string[][]"
+				"type": "string[32][32]"
 			}
 		],
 		"stateMutability": "view",
@@ -70,19 +71,23 @@ var contractABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "row",
 				"type": "uint256"
-			}
-		],
-		"name": "row_",
-		"outputs": [
+			},
+			{
+				"internalType": "uint256",
+				"name": "col",
+				"type": "uint256"
+			},
 			{
 				"internalType": "string",
-				"name": "",
+				"name": "_color",
 				"type": "string"
 			}
 		],
-		"stateMutability": "view",
+		"name": "paintPixel",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ];

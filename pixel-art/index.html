@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
 		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="application/javascript"></script>
+    <script src="https://kit.fontawesome.com/35d2f9faef.js" crossorigin="anonymous"></script>
 	
 	<script src="abi.js" defer></script>
 	<script src="main.js" defer></script>
@@ -20,7 +21,7 @@
 </head>
 
 <body>
-    <button id="theme" onclick="$('body').toggleClass('dark-theme')">Theme</button>
+    <button id="theme" onclick="$('body').toggleClass('dark-theme')">Dark Mode</button>
 
     <h1>Paint a Pixel</h1>
     <div id="canvas"></div>
@@ -29,5 +30,32 @@
         <input id="colorpicker" type="color">
     </div>
     <button id="submit">Paint!</button>
+
+    <div class="bg"></div>
+
+    <div class="popup" id="transaction">
+        <div>
+            <img src="https://web.archive.org/web/20090901183809/http://www.geocities.com/myhappyhistory05/Face/Weak.gif" alt="sad face">
+            <p>This pixel is already painted by another user (<span id="owner">0xD0E...9716</span>), you have to pay them to repaint the pixel.</p>
+        </div>
+        <p>Price for repainting: <span id="repaint-price">100 ETH</span></p>
+        <button id="confirm-t" onclick="$('#transaction, .bg').hide()">Confirm</button>
+        <button id="cancel-t" onclick="$('#transaction, .bg').hide()">Cancel</button>
+    </div>
+
+    <div class="popup" id="setprice">
+        <div>
+            <img src="https://web.archive.org/web/20090901183809/http://www.geocities.com/myhappyhistory05/Face/Happy.gif" alt="happy face">
+            <p>You successfully painted the pixel! Now you can set the price for other people to paint over. It can be up to twice of the price you paid:</p>
+        </div>
+        <input id="price" type="number" value="0" min="0" step="0.0001"><span>ETH</span>
+        <button id="confirm-s" onclick="$('#setprice, .bg').toggle()">Confirm</button>
+    </div>
+
+    <div class="mockup">
+        <button id="p1" onclick="$('#transaction, .bg').toggle()">mockup1</button>
+        <button id="p2" onclick="$('#setprice, .bg').toggle()">mockup2</button>
+    </div>
 </body>
+
 </html>

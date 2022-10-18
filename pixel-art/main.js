@@ -18,7 +18,6 @@ async function getCanvas() {
 
     for (let i = 0; i < canvasData.length; i++) {
         for (let j = 0; j < canvasData.length; j++) {
-
             $("#canvas").append(`<input 
                 type='radio' 
                 name='canvas' 
@@ -47,4 +46,3 @@ async function paintPixel() {
 
     tokenWithSigner.paintPixel(pixelRow, pixelCol, color);
 }
-
