@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <button id="theme" onclick="$('body').toggleClass('dark-theme')">Dark Mode</button>
+    <button id="theme" onclick="$('body').toggleClass('dark-theme')">Dark Theme</button>
 
     <h1>Paint a Pixel</h1>
     <div id="canvas"></div>
@@ -38,7 +38,7 @@
             <img src="https://web.archive.org/web/20090901183809/http://www.geocities.com/myhappyhistory05/Face/Weak.gif" alt="sad face">
             <p>This pixel is already painted by another user (<span id="owner">0xD0E...9716</span>), you have to pay them to repaint the pixel.</p>
         </div>
-        <p>Price for repainting: <span id="repaint-price">100 ETH</span></p>
+        <p>Price for repainting: <span id="repaint-price">1,000,000 ETH</span></p>
         <button id="confirm-t" onclick="$('#transaction, .bg').hide()">Confirm</button>
         <button id="cancel-t" onclick="$('#transaction, .bg').hide()">Cancel</button>
     </div>
@@ -49,7 +49,7 @@
             <p>You successfully painted the pixel! Now you can set the price for other people to paint over. It can be up to twice of the price you paid:</p>
         </div>
         <input id="price" type="number" value="0" min="0" step="0.0001"><span>ETH</span>
-        <button id="confirm-s" onclick="$('#setprice, .bg').toggle()">Confirm</button>
+        <button id="confirm-s" onclick="$('#setprice, .bg').hide()">Confirm</button>
     </div>
 
     <div class="mockup">
