@@ -1,0 +1,11 @@
+{
+    "name": "Pompompurin",
+    "image": "https://schung-21.github.io/blockchain-fa22/nft-w10/img/5.png",
+    "attributes": [
+        {
+            "display_type": "date",
+            "trait_type": "Birthday",
+            "value": "829630800"
+        }
+    ]
+}

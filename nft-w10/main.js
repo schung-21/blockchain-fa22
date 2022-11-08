@@ -14,7 +14,7 @@ async function main() {
 
     // INITIALIZAING STEPS (SKIP TO THE BOTTOM TO WRITE YOUR OWN CODE)
 
-    // loadingIconConnect.style.display = "block";
+    loadingIconConnect.style.display = "block";
 
     // Check website compatibility
     if(navigator.userAgent.indexOf("Safari") != -1

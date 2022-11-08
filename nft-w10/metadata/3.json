@@ -1,0 +1,11 @@
+{
+    "name": "Kirby",
+    "image": "https://schung-21.github.io/blockchain-fa22/nft-w10/img/3.png",
+    "attributes": [
+        {
+            "display_type": "date",
+            "trait_type": "Birthday",
+            "value": "732866400"
+        }
+    ]
+}

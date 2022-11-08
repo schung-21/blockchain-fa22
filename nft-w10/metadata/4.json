@@ -1,0 +1,11 @@
+{
+    "name": "Hello Kitty",
+    "image": "https://schung-21.github.io/blockchain-fa22/nft-w10/img/4.png",
+    "attributes": [
+        {
+            "display_type": "date",
+            "trait_type": "Birthday",
+            "value": "152517600"
+        }
+    ]
+}
