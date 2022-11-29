@@ -4,35 +4,42 @@ const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
 getCanvas();
 
-let pixelRow;
-let pixelCol;
+let x;
+let y;
+let index;
 let color = $("#colorpicker").val();
 
-$('#submit').click(function() {
-    paintPixel();
-});
-
 async function getCanvas() {
-    const canvasData = await contract.getCanvas();
-    console.log(canvasData);
+    const canvas = await contract.getCanvas();
+    const pixels = await contract.getPixels();
 
-    for (let i = 0; i < canvasData.length; i++) {
-        for (let j = 0; j < canvasData.length; j++) {
+    console.log(canvas);
+
+    for (let i = 0; i < canvas.length; i++) {
+        for (let j = 0; j < canvas.length; j++) {
             $("#canvas").append(`<input 
                 type='radio' 
                 name='canvas' 
-                id='x${i}y${j}' 
-                data-x='${i}'
-                data-y='${j}'
+                row='${i}' 
+                col='${j}' 
                 class='pixel' 
-                style='background:${canvasData[i][j]};'
+                style='background:${canvas[i][j]};'
             >`);
         }
     }
 
     $('.pixel').click(function() {
-        pixelRow = parseInt($(this).attr('data-x'));
-        pixelCol = parseInt($(this).attr('data-y'));
+        x = parseInt($(this).attr('row'));
+        y = parseInt($(this).attr('col'));
+        index = (x * 32) + y;
+
+        let color = pixels[index][1];
+        let price = pixels[index][2];
+        let painter = pixels[index][3];
+        $('#transaction').css('opacity', 1);
+        $('#color').html(color ? color : 'N/A');
+        $('#painter').html(painter.slice(0, 5) + '...' + painter.slice(-4));
+        $('#repaint-price').html(price > 0 ? price : '0');
     });
 }
 
@@ -40,9 +47,27 @@ $('#colorpicker').change(function() {
     color = $(this).val();
 });
 
+$('#submit').click(function() {
+    paintPixel();
+});
+
 async function paintPixel() {
     await provider.send("eth_requestAccounts", []);
     const tokenWithSigner = contract.connect(signer);
 
-    tokenWithSigner.paintPixel(pixelRow, pixelCol, color);
+    const pixels = await contract.getPixels();
+    let price = pixels[index][2].toString();
+
+    // paint
+    await tokenWithSigner.paintPixel(x, y, color, { value: ethers.utils.parseEther(price) });
+
+    // setting price
+    let newPrice;
+    $('#setprice').show();
+    $('#price').change(function() {
+        newPrice = $(this).val();
+    });
+    $('#confirm').click(function() {
+        
+    });
 }

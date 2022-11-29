@@ -1,4 +1,4 @@
-var contractAddress = "0x0a44F15417a5a438a1bdE9674aeA8e8722801eCc";
+var contractAddress = "0x324f9a7472dccCC1b4F1f7529DD97F6f243bA08A";
 
 var contractABI = [
 	{
@@ -12,19 +12,29 @@ var contractABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
-		"name": "addressToPainted",
+		"name": "addressToPaintedPixels",
 		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "id",
 				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "color",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "painter",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -68,15 +78,50 @@ var contractABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getPixels",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "color",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "painter",
+						"type": "address"
+					}
+				],
+				"internalType": "struct Pixel.pixel[1024]",
+				"name": "",
+				"type": "tuple[1024]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "row",
+				"name": "_row",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "col",
+				"name": "_col",
 				"type": "uint256"
 			},
 			{
@@ -87,7 +132,54 @@ var contractABI = [
 		],
 		"name": "paintPixel",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "pixels",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "color",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "painter",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "sendViaCall",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	}
 ];

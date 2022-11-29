@@ -22,7 +22,7 @@ body {
     background: #222;
 }
 
-button, #etherscan {
+button {
     padding: .25rem .5rem;
     border: 2px solid;
     color: inherit;
@@ -32,23 +32,25 @@ button, #etherscan {
     font-size: .9rem;
 }
 
-#etherscan {
-    position: absolute;
-    top: 2rem; left: 3rem;
-}
-
 #theme {
     position: absolute;
     top: 2rem; right: 3rem;
 }
 
-#menu {
-    position: absolute;
-    top: 2rem; right: 3rem;
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
 }
 
-.dropdown {
-    display: none;
+main .side {
+    min-width: 15rem;
+    text-align: left;
+}
+
+#transaction {
+    opacity: 0;
 }
 
 #canvas {
@@ -132,7 +134,7 @@ button, #etherscan {
     margin-bottom: 2rem;
 }
 
-#repaint-price {
+#repaint {
     display: block;
     font-size: 1.5rem;
     font-weight: 700;
