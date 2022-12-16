@@ -44,19 +44,13 @@
 
     <button id="submit">Paint!</button>
 
-    <div class="bg"></div>
-
     <div class="popup" id="setprice">
         <div>
             <img src="https://web.archive.org/web/20090901183809/http://www.geocities.com/myhappyhistory05/Face/Happy.gif" alt="happy face">
-            <p>You successfully painted the pixel! Now you can set the price for other people to paint over. It can be up to twice of the price you paid:</p>
+            <p>You successfully painted the pixel! Now you can set the price for other people to paint over:</p>
         </div>
         <input id="price" type="number" value="0" min="0.01" step="0.01"><span>MATIC</span>
         <button id="confirm" onclick="$('#setprice, .bg').hide()">Confirm</button>
-    </div>
-
-    <div class="mockup">
-        <button id="p2" onclick="$('#setprice, .bg').toggle()">mockup2</button>
     </div>
 </body>
 

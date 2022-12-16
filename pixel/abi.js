@@ -1,4 +1,4 @@
-var contractAddress = "0x324f9a7472dccCC1b4F1f7529DD97F6f243bA08A";
+var contractAddress = "0x1AD989E856E7fbf83818895C7d5e6c95D4a9B4ce";
 
 var contractABI = [
 	{
@@ -180,6 +180,24 @@ var contractABI = [
 		"name": "sendViaCall",
 		"outputs": [],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"name": "setPrice",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ];

@@ -31,15 +31,15 @@ async function getCanvas() {
     $('.pixel').click(function() {
         x = parseInt($(this).attr('row'));
         y = parseInt($(this).attr('col'));
-        index = (x * 32) + y;
+        id = (x * 32) + y;
 
-        let color = pixels[index][1];
-        let price = pixels[index][2];
-        let painter = pixels[index][3];
+        let paint = pixels[id][1];
+        let cost = pixels[id][2];
+        let painter = pixels[id][3];
         $('#transaction').css('opacity', 1);
-        $('#color').html(color ? color : 'N/A');
+        $('#color').html(paint ? paint : 'N/A');
         $('#painter').html(painter.slice(0, 5) + '...' + painter.slice(-4));
-        $('#repaint-price').html(price > 0 ? price : '0');
+        $('#repaint-price').html(cost > 0 ? price : '0');
     });
 }
 
@@ -48,26 +48,28 @@ $('#colorpicker').change(function() {
 });
 
 $('#submit').click(function() {
-    paintPixel();
+    paint();
 });
 
-async function paintPixel() {
+async function paint() {
     await provider.send("eth_requestAccounts", []);
     const tokenWithSigner = contract.connect(signer);
 
     const pixels = await contract.getPixels();
-    let price = pixels[index][2].toString();
+    let price = pixels[id][2].toString();
 
     // paint
-    await tokenWithSigner.paintPixel(x, y, color, { value: ethers.utils.parseEther(price) });
+    await tokenWithSigner.paintPixel(x, y, color); // { value: ethers.utils.parseEther(price) }
 
     // setting price
     let newPrice;
     $('#setprice').show();
+
     $('#price').change(function() {
         newPrice = $(this).val();
     });
+
     $('#confirm').click(function() {
-        
+        tokenWithSigner.setPrice(id, newPrice);
     });
 }

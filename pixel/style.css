@@ -87,14 +87,6 @@ main .side {
     transform: scale(1.2);
 }
 
-.mockup {
-    position: absolute;
-    bottom: 2rem; right: 3rem;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: .5rem;
-}
-
 .popup div {
     display: flex;
     gap: 2rem;
@@ -158,7 +150,7 @@ main .side {
     font-weight: 700;
 }
 
-#confirm-s {
+#confirm {
     margin: auto;
     display: block;
 }
